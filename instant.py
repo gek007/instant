@@ -31,3 +31,11 @@ explaining that it is live on production for the first time!
     return html
 
 
+@app.get("/", response_class=HTMLResponse)
+def about():
+    return "About page"
+
+
+@app.get("/health", response_class=HTMLResponse)
+def health():
+    return "Healthy as a horse!"
