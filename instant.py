@@ -43,3 +43,8 @@ def about():
 @app.get("/health", response_class=HTMLResponse)
 def health():
     return "Healthy as a horse!"
+
+
+@app.get("/home", response_class=HTMLResponse)
+def home():
+    return "Home page"
