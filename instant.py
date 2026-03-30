@@ -10,6 +10,8 @@ load_dotenv()
 
 app = FastAPI()
 
+def add(a: int, b: int) -> int:
+    return a + b 
 
 @app.get("/", response_class=HTMLResponse)
 def welcome():
