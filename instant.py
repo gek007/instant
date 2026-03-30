@@ -11,10 +11,6 @@ app = FastAPI()
 client = OpenAI()
 
 
-def add(a: int, b: int) -> int:
-    return a + b
-
-
 @app.get("/", response_class=HTMLResponse)
 def welcome():
 
@@ -33,23 +29,3 @@ explaining that it is live on production for the first time!
     reply = response.choices[0].message.content.replace("\n", "<br/>")
     html = f"<html><head><title>Live in an Instant!</title></head><body><p>{reply}</p></body></html>"
     return html
-
-
-@app.get("/about", response_class=HTMLResponse)
-def about():
-    return "About page"
-
-
-@app.get("/health", response_class=HTMLResponse)
-def health():
-    return "Healthy as a horse!"
-
-
-@app.get("/home", response_class=HTMLResponse)
-def home():
-    return "Home page"
-
-
-@app.get("/news", response_class=HTMLResponse)
-def news():
-    return "News page"
