@@ -10,6 +10,8 @@ load_dotenv()
 
 app = FastAPI()
 
+def add(a: int, b: int) -> int:
+    return a + b 
 
 @app.get("/", response_class=HTMLResponse)
 def welcome():
@@ -29,3 +31,6 @@ explaining that it is live on production for the first time!
     reply = response.choices[0].message.content.replace("\n", "<br/>")
     html = f"<html><head><title>Live in an Instant!</title></head><body><p>{reply}</p></body></html>"
     return html
+
+
+
