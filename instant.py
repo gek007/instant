@@ -1,5 +1,3 @@
-import os
-
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
@@ -10,12 +8,16 @@ load_dotenv()
 
 app = FastAPI()
 
+client = OpenAI()
+
+
 def add(a: int, b: int) -> int:
-    return a + b 
+    return a + b
+
 
 @app.get("/", response_class=HTMLResponse)
 def welcome():
-    client = OpenAI()
+
     message = """
 You are on a website that has just been deployed to production for the first time!
 Please reply with an enthusiastic announcement to welcome visitors to the site, 
@@ -33,4 +35,11 @@ explaining that it is live on production for the first time!
     return html
 
 
+@app.get("/about", response_class=HTMLResponse)
+def about():
+    return "About page"
 
+
+@app.get("/health", response_class=HTMLResponse)
+def health():
+    return "Healthy as a horse!"
