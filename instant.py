@@ -48,3 +48,8 @@ def health():
 @app.get("/home", response_class=HTMLResponse)
 def home():
     return "Home page"
+
+
+@app.get("/news", response_class=HTMLResponse)
+def news():
+    return "News page"
