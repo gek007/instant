@@ -7,9 +7,12 @@ load_dotenv()
 
 app = FastAPI()
 
+client = OpenAI()
+
+
 @app.get("/", response_class=HTMLResponse)
 def welcome():
-    client = OpenAI()
+
     message = """
 You are on a website that has just been deployed to production for the first time!
 Please reply with an enthusiastic announcement to welcome visitors to the site, 
