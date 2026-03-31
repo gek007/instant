@@ -11,8 +11,13 @@ app = FastAPI()
 client = OpenAI()
 
 
+client = OpenAI()
+
+
+
 @app.get("/", response_class=HTMLResponse)
 def welcome():
+
 
     message = """
 You are on a website that has just been deployed to production for the first time!
