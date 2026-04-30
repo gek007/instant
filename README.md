@@ -51,3 +51,19 @@ vercel deploy
 Make sure OPENAI_API_KEY is set as an Environment Variable in your Vercel project settings, since .env files are not uploaded.
 
 Key note: fastapi_with_basemodel.py does not call load_dotenv(), so when running it locally you must either have OPENAI_API_KEY already set in your shell environment, or add load_dotenv() to the top of that file yourself.
+
+===========================================
+
+## Deploy to AWS 
+
+0. Run locally: uvicorn app:app --reload  
+1. Create Docker file 
+2. Create .dockerignore 
+3. Push image to Repo 
+
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/your-repo.git
+git push -u origin main
