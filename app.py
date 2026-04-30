@@ -2,7 +2,6 @@ from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 from openai import OpenAI
-from pydantic import BaseModel
 
 load_dotenv()
 
